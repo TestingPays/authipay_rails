@@ -27,30 +27,40 @@
           </div>
         </div>
 
-
-        <form class="form-horizontal" role="form" id="authipay-form" action="/charges" method="post">
+        <% timestamp = Time.now.strftime("%Y:%m:%d-%H:%M:%S") %>
+        <form class="form-horizontal" role="form" id="authipay-form" action="<%= Authipay.url %>" method="post">
+          <input type="hidden" class="" name="txntype" id="txntype" value="sale">
+          <input type="hidden" class="" name="timezone" id="timezone" value="Europe/Dublin">
+          <input type="hidden" class="" name="txndatetime" id="txndatetime" value="<%= timestamp %>">
+          <input type="hidden" class="" name="hash_algorithm" id="hash_algorithm" value="SHA256">
+          <input type="hidden" class="" name="hash" id="hash" value="<%= Authipay.create_hash("250.00", "978", timestamp) %>">
+          <input type="hidden" class="" name="storename" id="storename" value="<%= Authipay.store_id %>">
+          <input type="hidden" class="" name="mode" id="mode" value="fullpay">
+          <input type="hidden" class="" name="responseSuccessURL" id="responseSuccessURL" value="http://localhost:3000/charges">
+          <input type="hidden" class="" name="responseFailURL" id="responseFailURL" value="http://localhost:3000/charges">
+          <input type="hidden" class="" name="currency" id="currency" value="978"> <!-- EUR --!>
 
           <div class="form-group">
             <label class="col-sm-3 control-label" for="card-holder-name">Name on Card</label>
             <div class="col-sm-9">
-              <input type="text" class="form-control" name="card-holder-name" id="card-holder-name" value="John Doe">
+              <input type="text" class="form-control" name="cardholdername" id="cardholdername" value="John Doe">
             </div>
           </div>
 
           <div class="form-group">
             <label class="col-sm-3 control-label" for="card-number">Card Number</label>
             <div class="col-sm-9">
-              <input type="text" class="form-control" name="card-number" id="card-number" value="4111 1111 1111 1111">
+              <input type="text" class="form-control" name="cardnumber" id="cardnumber" value="4111111111111111">
             </div>
           </div>
 
           <div class="form-group">
-            <label class="col-sm-3 control-label" for="expiry-month">Expiration Date</label>
+            <label class="col-sm-3 control-label" for="expmonth">Expiration Date</label>
             <div class="col-sm-9">
               <div class="row">
 
                 <div class="col-xs-3">
-                  <select class="form-control col-sm-2" name="expiry-month" id="expiry-month" value="12">
+                  <select class="form-control col-sm-2" name="expmonth" id="expmonth" value="12">
                         <option>Month</option>
                         <option value="01">Jan (01)</option>
                         <option value="02">Feb (02)</option>
@@ -68,15 +78,15 @@
                 </div>
 
                 <div class="col-xs-3">
-                  <select class="form-control" name="expiry-year" id="expiry-year">
-                        <option value="16">2016</option>
-                        <option value="17">2017</option>
-                        <option value="18">2018</option>
-                        <option value="19">2019</option>
-                        <option value="20">2020</option>
-                        <option value="21">2021</option>
-                        <option value="22">2022</option>
-                        <option selected value="23">2023</option>
+                  <select class="form-control" name="expyear" id="expyear">
+                        <option value="2016">2016</option>
+                        <option value="2017">2017</option>
+                        <option value="2018">2018</option>
+                        <option value="2019">2019</option>
+                        <option value="2020">2020</option>
+                        <option value="2021">2021</option>
+                        <option value="2022">2022</option>
+                        <option selected value="2023">2023</option>
                       </select>
                 </div>
 
@@ -85,17 +95,17 @@
           </div>
 
           <div class="form-group">
-            <label class="col-sm-3 control-label" for="cvv">Card CVV</label>
+            <label class="col-sm-3 control-label" for="cvm">Card CVV</label>
             <div class="col-sm-3">
-              <input type="text" class="form-control" name="cvv" id="cvc" value="222">
+              <input type="text" class="form-control" name="cvm" id="cvm" value="222">
             </div>
           </div>
 
           <div class="form-group">
             <label class="col-sm-3 control-label" for="price">Total</label>
             <div class="col-sm-3">
-              <input id='amount' class="form-control" name="amount" value="250.00" type="number" step="0.01"/>
-              <small style="color: red">Pay what you want !!</small>
+              <input id='amount' class="form-control" name="chargetotal" value="250.00" type="number" step="0.01"/>
+              <small style="color: red">Pay what you want!</small>
             </div>
           </div>
 
@@ -104,8 +114,6 @@
               <button type="submit" id="submit-btn" class="btn btn-success">Pay Now</button>
             </div>
           </div>
-
-          <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
 
         </form>
       </div>

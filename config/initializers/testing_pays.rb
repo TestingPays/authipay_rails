@@ -1,4 +1,6 @@
 # config/initializers/testing_pays.rb
 if Rails.env.development? || Rails.env.test?
-  puts "TODO Add settings here"
+  ## Override Authipay URL"
+
+  #Authipay.set_url "--https://test.ipg-online.com/connect/gateway/processing"
 end

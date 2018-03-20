@@ -25,6 +25,14 @@ $ gem install bundler
 $ bundle install
 ```
 
+You also need to have an [Authipay](https://authipay.com) account setup. And from that you need to set the following credentials into environment variables:
+
+```bash
+AUTHIPAY_STORE_ID=1234567890
+AUTHIPAY_USER_ID=1234567890
+AUTHIPAY_SHARED_SECRET=t1p%0gBao
+```
+
 ## Running the application
 
 Now that we have the application installed and our api keys setup we can start using the application. firstly lets run the tests to make everything is in order.
