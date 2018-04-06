@@ -23,7 +23,7 @@
           <h4>3 Nights Stay</h4>
         </div>
         <div class="product-footer">
-          <button class="btn btn-lg btn-primary btn-block" data-toggle="modal" data-target="#authipayFormModal">Purchase Package</button>
+          <button class="btn btn-lg btn-primary btn-block" data-toggle="modal" data-target="#authipayFormModal">PayOnly</button>
         </div>
       </div>
     </div>
@@ -42,7 +42,7 @@
           <h4>Flights Included</h4>
         </div>
         <div class="product-footer">
-          <button class="btn btn-lg btn-primary btn-block" data-toggle="modal" data-target="#authipayFormModal">Purchase Package</button>
+          <button class="btn btn-lg btn-primary btn-block" data-toggle="modal" data-target="#authipayFormModalPlus">PayPlus</button>
         </div>
       </div>
     </div>
@@ -63,7 +63,7 @@
           <h4>Dinner Included</h4>
         </div>
         <div class="product-footer">
-          <button class="btn btn-lg btn-primary btn-block" data-toggle="modal" data-target="#authipayFormModal">Purchase Package</button>
+          <button class="btn btn-lg btn-primary btn-block" data-toggle="modal" data-target="#authipayFormModalFull">FullPay</button>
         </div>
       </div>
     </div>
@@ -72,4 +72,6 @@
 
 </div>
 
-<%= render "partials/authipay_form_modal" %>
+<%= render "partials/authipay_form_modal", post_fix: "", mode: "payonly" %>
+<%= render "partials/authipay_form_modal", post_fix: "Plus", mode: "payplus" %>
+<%= render "partials/authipay_form_modal", post_fix: "Full", mode: "fullpay" %>

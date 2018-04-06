@@ -1,4 +1,4 @@
-<div id="authipayFormModal" class="modal fade" tabindex="-1" role="dialog">
+<div id="authipayFormModal<%= post_fix %>" class="modal fade" tabindex="-1" role="dialog">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
 
@@ -30,12 +30,12 @@
         <% timestamp = Time.now.strftime("%Y:%m:%d-%H:%M:%S") %>
         <form class="form-horizontal" role="form" id="authipay-form" action="<%= Authipay.url %>" method="post">
           <input type="hidden" class="" name="txntype" id="txntype" value="sale">
+          <input type="hidden" class="" name="mode" id="mode" value="<%= mode %>">
           <input type="hidden" class="" name="timezone" id="timezone" value="Europe/Dublin">
           <input type="hidden" class="" name="txndatetime" id="txndatetime" value="<%= timestamp %>">
           <input type="hidden" class="" name="hash_algorithm" id="hash_algorithm" value="SHA256">
           <input type="hidden" class="" name="hash" id="hash" value="<%= Authipay.create_hash("250.00", "978", timestamp) %>">
           <input type="hidden" class="" name="storename" id="storename" value="<%= Authipay.store_id %>">
-          <input type="hidden" class="" name="mode" id="mode" value="fullpay">
           <input type="hidden" class="" name="responseSuccessURL" id="responseSuccessURL" value="http://localhost:3000/charges">
           <input type="hidden" class="" name="responseFailURL" id="responseFailURL" value="http://localhost:3000/charges">
           <input type="hidden" class="" name="currency" id="currency" value="978"> <!-- EUR --!>
@@ -50,7 +50,7 @@
           <div class="form-group">
             <label class="col-sm-3 control-label" for="card-number">Card Number</label>
             <div class="col-sm-9">
-              <input type="text" class="form-control" name="cardnumber" id="cardnumber" value="4111111111111111">
+              <input type="text" class="form-control" name="cardnumber" id="cardnumber" value="4035874000424977">
             </div>
           </div>
 
