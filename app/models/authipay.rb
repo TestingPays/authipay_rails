@@ -3,9 +3,9 @@ require 'digest'
 class Authipay
   @@connect_url = "https://test.ipg-online.com/connect/gateway/processing"
 
-  ## URLs
+  ## URLs - use the ENV Var and fall back to the connect URL
   def self.url
-    @@connect_url
+    ENV["AUTHIPAY_URL"] || @@connect_url
   end
 
   def self.set_url new_url
