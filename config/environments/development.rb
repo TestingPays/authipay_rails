@@ -55,4 +55,6 @@ Rails.application.configure do
   unless Rails.env.production?
     ENV['YOUR_API_KEY'] = "YOUR_TESTING_PAYS_API_KEY"
   end
+
+  config.callback_base = "http://localhost:3001"
 end

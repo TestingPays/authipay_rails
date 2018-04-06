@@ -31,6 +31,7 @@ You also need to have an [Authipay](https://authipay.com) account setup. And fro
 AUTHIPAY_STORE_ID=1234567890
 AUTHIPAY_USER_ID=1234567890
 AUTHIPAY_SHARED_SECRET=t1p%0gBao
+CALLBACK_BASE="http://localhost:3001"
 ```
 
 ## Running the application
@@ -56,6 +57,15 @@ Your application should now be running [locally](http://localhost:3000/charges).
 ### Developing with Testing Pays
 
 In order to work with [Testing Pays](http://www.testingpays.com) you need to provide your API Key. You can find that in the [instructions](https://admin.testingpays.com/) or in your team page.
+
+When you point at Testing Pays, set the following environment variables:
+
+```bash
+AUTHIPAY_SHARED_SECRET=SharedSecret
+AUTHIPAY_URL="https://api.testingpays.com/YOUR_KEY_HERE/authipay/v1/connect/checkout"
+```
+
+And you should be ready to go
 
 ### Unit Testing with Testing Pays
 

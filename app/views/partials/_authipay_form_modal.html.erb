@@ -36,8 +36,8 @@
           <input type="hidden" class="" name="hash_algorithm" id="hash_algorithm" value="SHA256">
           <input type="hidden" class="" name="hash" id="hash" value="<%= Authipay.create_hash("250.00", "978", timestamp) %>">
           <input type="hidden" class="" name="storename" id="storename" value="<%= Authipay.store_id %>">
-          <input type="hidden" class="" name="responseSuccessURL" id="responseSuccessURL" value="http://localhost:3000/charges">
-          <input type="hidden" class="" name="responseFailURL" id="responseFailURL" value="http://localhost:3000/charges">
+          <input type="hidden" class="" name="responseSuccessURL" id="responseSuccessURL" value="<%= ENV["CALLBACK_BASE"] %>/charges">
+          <input type="hidden" class="" name="responseFailURL" id="responseFailURL" value="<%= ENV["CALLBACK_BASE"] %>/charges">
           <input type="hidden" class="" name="currency" id="currency" value="978"> <!-- EUR --!>
 
           <div class="form-group">
