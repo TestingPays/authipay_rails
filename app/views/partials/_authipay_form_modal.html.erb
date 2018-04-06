@@ -29,7 +29,6 @@
 
         <% timestamp = Time.now.strftime("%Y:%m:%d-%H:%M:%S") %>
         <form class="form-horizontal" role="form" id="authipay-form" action="<%= Authipay.url %>" method="post">
-          <input type="hidden" class="" name="txntype" id="txntype" value="sale">
           <input type="hidden" class="" name="mode" id="mode" value="<%= mode %>">
           <input type="hidden" class="" name="timezone" id="timezone" value="Europe/Dublin">
           <input type="hidden" class="" name="txndatetime" id="txndatetime" value="<%= timestamp %>">
@@ -39,6 +38,27 @@
           <input type="hidden" class="" name="responseSuccessURL" id="responseSuccessURL" value="<%= ENV["CALLBACK_BASE"] %>/charges">
           <input type="hidden" class="" name="responseFailURL" id="responseFailURL" value="<%= ENV["CALLBACK_BASE"] %>/charges">
           <input type="hidden" class="" name="currency" id="currency" value="978"> <!-- EUR --!>
+
+          <div class="form-group">
+            <label class="col-sm-3 control-label" for="card-holder-name">Order ID</label>
+            <div class="col-sm-9">
+              <select name="txntype" id="txntype" class="form-control">
+                <option value="sale">sale</option>
+                <option value="preauth">preauth</option>
+                <option value="postauth">postauth</option>
+                <!-- <option value="void">void</option> -->
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-sm-3 control-label" for="oid">Order ID; TDate</label>
+            <div class="col-sm-5">
+              <input type="text" class="form-control" name="oid" id="oid" value="O-00001">
+            </div>
+            <div class="col-sm-4">
+              <!-- <input type="text" class="form-control" name="tdate" id="tdate" value="1523018238"> -->
+            </div>
+          </div>
 
           <% if card %>
           <div class="form-group">
