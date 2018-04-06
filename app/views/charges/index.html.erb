@@ -2,9 +2,9 @@
 
   <div class="col-xs-12 text-center">
     <div class="header-text">
-      <h3>Take a trip to New York</h3>
-      <h5>Choose from one of our Packages</h5>
+      <h3>Authipay Connect API - Example integration</h3>
       <hr width="80%">
+      <p><a href="https://github.com/TestingPays/authipay_rails">This Rails application</a> is an example on how you can implement an integration to Authipay Connect using Ruby on Rails.</p>
     </div>
   </div>
 
@@ -15,15 +15,15 @@
       <div class="product-container">
         <div class="product-description text-center">
           <div class="price-holder">
-            <h3>$400.00</h3>
-            <small>Recommended amounts*</small>
+            <h3>PayOnly mode</h3>
           </div>
-          <h4>4 Star Hotel</h4>
+          <h4>Example redirect based transaction, using PayOnly mode.</h4>
           <hr width="40%">
-          <h4>3 Nights Stay</h4>
+          <h4>Will collect payment details</h4>
         </div>
         <div class="product-footer">
-          <button class="btn btn-lg btn-primary btn-block" data-toggle="modal" data-target="#authipayFormModal">PayOnly</button>
+          <button class="btn btn-lg btn-primary btn-block" data-toggle="modal" data-target="#authipayFormModalWithCard">PayOnly with CC</button>
+          <button class="btn btn-lg btn-primary btn-block" data-toggle="modal" data-target="#authipayFormModal">PayOnly without CC</button>
         </div>
       </div>
     </div>
@@ -32,17 +32,15 @@
       <div class="product-container">
         <div class="product-description text-center">
           <div class="price-holder">
-            <h3>$600.00</h3>
-            <small>Recommended amounts*</small>
+            <h3>PayPlus mode</h3>
           </div>
-          <h4>4 Star Hotel</h4>
+          <h4>Example redirect based transaction, using PayPlus mode.</h4>
           <hr width="40%">
-          <h4>3 Nights Stay</h4>
-          <hr width="40%">
-          <h4>Flights Included</h4>
+          <h4>Will collect payment and billing details</h4>
         </div>
         <div class="product-footer">
-          <button class="btn btn-lg btn-primary btn-block" data-toggle="modal" data-target="#authipayFormModalPlus">PayPlus</button>
+          <button class="btn btn-lg btn-primary btn-block" data-toggle="modal" data-target="#authipayFormModalPlusWithCard">PayPlus with CC</button>
+          <button class="btn btn-lg btn-primary btn-block" data-toggle="modal" data-target="#authipayFormModalPlus">PayPlus withouth CC</button>
         </div>
       </div>
     </div>
@@ -51,19 +49,15 @@
       <div class="product-container">
         <div class="product-description text-center">
           <div class="price-holder">
-            <h3>$700.00</h3>
-            <small>Recommended amounts*</small>
+            <h3>FullPay mode</h3>
           </div>
-          <h4>4 Star Hotel</h4>
+          <h4>Example redirect based transaction, using FullPay mode.</h4>
           <hr width="40%">
-          <h4>3 Nights Stay</h4>
-          <hr width="40%">
-          <h4>Flights Included</h4>
-          <hr width="40%">
-          <h4>Dinner Included</h4>
+          <h4>Will collect payment, billing and shipping details</h4>
         </div>
         <div class="product-footer">
-          <button class="btn btn-lg btn-primary btn-block" data-toggle="modal" data-target="#authipayFormModalFull">FullPay</button>
+          <button class="btn btn-lg btn-primary btn-block" data-toggle="modal" data-target="#authipayFormModalFullWithCard">FullPay with CC</button>
+          <button class="btn btn-lg btn-primary btn-block" data-toggle="modal" data-target="#authipayFormModalFull">FullPay without CC</button>
         </div>
       </div>
     </div>
@@ -72,6 +66,9 @@
 
 </div>
 
-<%= render "partials/authipay_form_modal", post_fix: "", mode: "payonly" %>
-<%= render "partials/authipay_form_modal", post_fix: "Plus", mode: "payplus" %>
-<%= render "partials/authipay_form_modal", post_fix: "Full", mode: "fullpay" %>
+<%= render "partials/authipay_form_modal", post_fix: "WithCard", mode: "payonly", card: true %>
+<%= render "partials/authipay_form_modal", post_fix: "", mode: "payonly", card: false %>
+<%= render "partials/authipay_form_modal", post_fix: "PlusWithCard", mode: "payplus", card: true %>
+<%= render "partials/authipay_form_modal", post_fix: "Plus", mode: "payplus", card: false %>
+<%= render "partials/authipay_form_modal", post_fix: "FullWithCard", mode: "fullpay", card: true %>
+<%= render "partials/authipay_form_modal", post_fix: "Full", mode: "fullpay", card: false %>

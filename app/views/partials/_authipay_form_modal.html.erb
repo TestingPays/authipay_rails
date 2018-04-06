@@ -4,7 +4,7 @@
 
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title">Payment</h4>
+        <h4 class="modal-title">Payment mode: <%= mode %></h4>
       </div>
 
       <div class="modal-body">
@@ -40,6 +40,7 @@
           <input type="hidden" class="" name="responseFailURL" id="responseFailURL" value="<%= ENV["CALLBACK_BASE"] %>/charges">
           <input type="hidden" class="" name="currency" id="currency" value="978"> <!-- EUR --!>
 
+          <% if card %>
           <div class="form-group">
             <label class="col-sm-3 control-label" for="card-holder-name">Name on Card</label>
             <div class="col-sm-9">
@@ -100,6 +101,7 @@
               <input type="text" class="form-control" name="cvm" id="cvm" value="222">
             </div>
           </div>
+          <% end %>
 
           <div class="form-group">
             <label class="col-sm-3 control-label" for="price">Total</label>
