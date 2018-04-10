@@ -46,7 +46,7 @@
                 <option value="sale">sale</option>
                 <option value="preauth">preauth</option>
                 <option value="postauth">postauth</option>
-                <!-- <option value="void">void</option> -->
+                <option value="void">void</option>
               </select>
             </div>
           </div>
@@ -56,11 +56,22 @@
               <input type="text" class="form-control" name="oid" id="oid" value="O-00001">
             </div>
             <div class="col-sm-4">
-              <!-- <input type="text" class="form-control" name="tdate" id="tdate" value="1523018238"> -->
+              <input type="text" class="form-control" name="tdate" id="tdate" value="1523018238">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-sm-3 control-label" for="authenticateTransaction">3D Secure</label>
+            <div class="col-sm-9">
+              <select name="authenticateTransaction" id="authenticateTransaction" class="form-control">
+                <option value="true">true</option>
+                <option value="false">false</option>
+              </select>
             </div>
           </div>
 
           <% if card %>
+
           <div class="form-group">
             <label class="col-sm-3 control-label" for="card-holder-name">Name on Card</label>
             <div class="col-sm-9">
@@ -122,6 +133,45 @@
             </div>
           </div>
           <% end %>
+
+          <!--
+          <div class="form-group">
+            <label class="col-sm-3 control-label" for="card-number">Business Company</label>
+            <div class="col-sm-9">
+              <input type="text" class="form-control" name="bcompany" id="bcompany">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-sm-3 control-label" for="card-number">Business Name</label>
+            <div class="col-sm-9">
+              <input type="text" class="form-control" name="bname" id="bname">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-sm-3 control-label" for="card-number">Business Addr1</label>
+            <div class="col-sm-9">
+              <input type="text" class="form-control" name="baddr1" id="baddr1">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-sm-3 control-label" for="card-number">Business City</label>
+            <div class="col-sm-9">
+              <input type="text" class="form-control" name="baddr1" id="bcity">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-sm-3 control-label" for="card-number">Business Zip</label>
+            <div class="col-sm-9">
+              <input type="text" class="form-control" name="bzip" id="bzip">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-sm-3 control-label" for="card-number">Business Country</label>
+            <div class="col-sm-9">
+              <input type="text" class="form-control" name="bcountry" id="bcountry">
+            </div>
+          </div>
+-->
 
           <div class="form-group">
             <label class="col-sm-3 control-label" for="price">Total</label>
