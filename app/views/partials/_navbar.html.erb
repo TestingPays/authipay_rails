@@ -2,14 +2,18 @@
   <div class="container-fluid">
 
     <div class="navbar-header">
-      <a class="navbar-brand" href="/">
+      <%= link_to :root, class: "navbar-brand" do %>
         Testing Pays
-      </a>
+      <% end %>
     </div>
 
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="/">Home</a></li>
+        <li>
+        <%= link_to :root, class: "navbar-brand" do %>
+          Home
+        <% end %>
+        </li>
       </ul>
     </div>
 
