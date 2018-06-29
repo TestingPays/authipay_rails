@@ -27,7 +27,6 @@
           </div>
         </div>
 
-        <% timestamp = Time.now.strftime("%Y:%m:%d-%H:%M:%S") %>
         <form class="form-horizontal" role="form" id="authipay-form" action="<%= Authipay.url %>" method="post">
           <input type="hidden" class="" name="mode" id="mode" value="<%= mode %>">
           <input type="hidden" class="" name="timezone" id="timezone" value="Europe/Dublin">
@@ -199,7 +198,7 @@
           <div class="form-group">
             <label class="col-sm-3 control-label" for="price">Total</label>
             <div class="col-sm-3">
-              <input id='amount' class="form-control" name="chargetotal" value="<%= params["amount"] || "250.00" %>" type="number" step="0.01"/>
+              <input id='amount' class="form-control" name="chargetotal" onchange="calculateHash(this);" data-chargetotal="authipayFormModal<%= post_fix %>" value="<%= params["amount"] || "250.00" %>" type="number" step="0.01"/>
               <small style="color: red">Pay what you want!</small>
             </div>
           </div>
