@@ -1,22 +1,45 @@
 body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  background-color: #FAFAFA;
+  background-color: white;
   height: 100vh;
   width: 100vw;
-  background-color: #E6E4E3;
   background-size: cover;
   color: #424242;
+
+  // Increase the default font size
+  font-size: 16px;
 }
-.padding-top {
-  padding-top: 55px;
+
+.panel {
+  min-height: 220px;
+  max-width: 350px;
+  margin-left: auto;
+  margin-right: auto;
 }
-hr {
-  border-color: #BDBDBD;
+.panel-heading {
+  padding: 1em;
+  background-color: #3a3d3d !important;
+  background-image: none !important;
 }
+.panel-title {
+  font-size: 24px;
+  color: white;
+}
+.btn-lg {
+  max-width: 350px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.btn-primary {
+  color: white !important;
+  background-color: #67C5A5 !important;
+  background-image: none !important;
+  border: none;
+}
+
+hr { border-color: #BDBDBD; }
+.hidden-container { display: none; }
 .payment-text {
   font-size: 1.5em;
   padding: 25px;
-}
-.hidden-container {
-  display: none;
 }
