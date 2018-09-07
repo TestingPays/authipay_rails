@@ -1,9 +1,11 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-12 text-center">
-      <h3>Authipay Connect API - Example integration</h3>
+      <h3>Authipay Connect API - Example integration by <a href="https://www.testingpays.com" target="_BLANK">Testing Pays</a></h3>
       <hr width="80%">
-      <p><a href="https://github.com/TestingPays/authipay_rails">This Rails application</a> is an example on how you can implement an integration to Authipay Connect using Ruby on Rails.</p>
+      <p>
+        <a href="https://github.com/TestingPays/authipay_rails">This Rails application</a> is an example on how you can implement an integration to Authipay Connect using Ruby on Rails.
+      </p>
     </div>
   </div>
 </div>
@@ -23,14 +25,12 @@
           <p>Example redirect based transaction, using PayOnly mode.</>
           <hr width="40%">
           <p>Will collect payment details</p>
+          <br>
+          <button class="btn btn-lg btn-primary btn-block" data-toggle="modal" data-target="#authipayFormModalWithCard">With Card Details</button>
+          <button class="btn btn-lg btn-primary btn-block" data-toggle="modal" data-target="#authipayFormModal">Without Card Details</button>
         </div>
       </div>
 
-      <button class="btn btn-lg btn-primary btn-block" data-toggle="modal" data-target="#authipayFormModalWithCard">PayOnly with CC</button>
-      <button class="btn btn-lg btn-primary btn-block" data-toggle="modal" data-target="#authipayFormModal">PayOnly without CC</button>
-
-      <br>
-      <br>
       <br>
     </div>
 
@@ -43,14 +43,10 @@
           <p>Example redirect based transaction, using FullPay mode.</p>
           <hr width="40%">
           <p>Will collect payment, billing and shipping details</p>
+          <button class="btn btn-lg btn-primary btn-block" data-toggle="modal" data-target="#authipayFormModalPlusWithCard">With Card Details</button>
+          <button class="btn btn-lg btn-primary btn-block" data-toggle="modal" data-target="#authipayFormModalPlus">Without Card Details</button>
         </div>
       </div>
-
-
-      <button class="btn btn-lg btn-primary btn-block" data-toggle="modal" data-target="#authipayFormModalPlusWithCard">PayPlus with CC</button>
-      <button class="btn btn-lg btn-primary btn-block" data-toggle="modal" data-target="#authipayFormModalPlus">PayPlus without CC</button>
-      <br>
-      <br>
       <br>
     </div>
 
@@ -63,13 +59,11 @@
           <p>Example redirect based transaction, using PayPlus mode.</p>
           <hr width="40%">
           <p>Will collect payment and billing details</p>
+          <br>
+          <button class="btn btn-lg btn-primary btn-block" data-toggle="modal" data-target="#authipayFormModalFullWithCard">With Card Details</button>
+          <button class="btn btn-lg btn-primary btn-block" data-toggle="modal" data-target="#authipayFormModalFull">Without Card Details</button>
         </div>
       </div>
-
-      <button class="btn btn-lg btn-primary btn-block" data-toggle="modal" data-target="#authipayFormModalFullWithCard">FullPay with CC</button>
-      <button class="btn btn-lg btn-primary btn-block" data-toggle="modal" data-target="#authipayFormModalFull">FullPay without CC</button>
-      <br>
-      <br>
       <br>
     </div>
 
