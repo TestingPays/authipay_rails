@@ -26,4 +26,6 @@ function calculateHash(e) {
   $('#' + form_id + ' input[name=hash]').val(sha);
 }
 
-$('[data-toggle="tooltip"]').tooltip();
+$(document).ready(function() {
+  $('[data-toggle="tooltip"]').tooltip();
+});

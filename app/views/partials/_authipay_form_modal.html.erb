@@ -128,7 +128,7 @@
 <% end %>
 
           <div class="form-group">
-            <label class="col-sm-3 control-label" for="price" data-toggle="tooltip" data-placement="top" title="Use the amount's cent value to walk through different payment scenarios.<br/>Read more on it in your Testing Pays account's 'Test' tab.">Total <i class="fa fa-info-circle"></i>
+            <label class="col-sm-3 control-label" for="price" data-toggle="tooltip" data-placement="top" title="Use the amount's cent value to walk through different payment scenarios. Read more on it in your Testing Pays account's 'Test' tab.">Total <i class="fa fa-info-circle"></i>
 </label>
             <div class="col-sm-3">
               <input id='amount' class="form-control" name="chargetotal" onchange="calculateHash(this);" data-chargetotal="authipayFormModal<%= post_fix %>" value="<%= params["amount"] || "250.00" %>" type="number" step="0.01"/>
