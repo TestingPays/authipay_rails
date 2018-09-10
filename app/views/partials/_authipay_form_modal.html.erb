@@ -4,26 +4,13 @@
 
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title">Payment mode: <%= mode %></h4>
+        <h4 class="modal-title">Your Payment Form in <b><%= mode %></b> mode
+        </h4>
       </div>
 
       <div class="modal-body">
-
         <div id="message-container" class="hidden-container">
           <div id="message-text" class="text-center payment-text">
-          </div>
-
-        </div>
-
-        <div id="spinner-container" class="hidden-container">
-          <div id="payment-text" class="text-center col-xs-12 payment-text">
-            One moment we are processing your request ...
-          </div>
-
-          <div class="spinner">
-            <div class="bounce1"></div>
-            <div class="bounce2"></div>
-            <div class="bounce3"></div>
           </div>
         </div>
 
@@ -37,61 +24,6 @@
           <input type="hidden" class="" name="responseSuccessURL" id="responseSuccessURL" value="<%= ENV["CALLBACK_BASE"] %>/charges">
           <input type="hidden" class="" name="responseFailURL" id="responseFailURL" value="<%= ENV["CALLBACK_BASE"] %>/charges">
           <input type="hidden" class="" name="currency" id="currency" value="978"> <!-- EUR --!>
-
-          <div class="form-group">
-            <label class="col-sm-3 control-label" for="card-holder-name">Transaction Type</label>
-            <div class="col-sm-9">
-              <select name="txntype" id="txntype" class="form-control">
-                <option value="sale">sale</option>
-                <option value="preauth">preauth</option>
-                <option value="postauth">postauth</option>
-                <option value="void">void</option>
-              </select>
-            </div>
-          </div>
-          <div class="form-group">
-            <label class="col-sm-3 control-label" for="oid">Order ID; TDate</label>
-            <div class="col-sm-5">
-              <input type="text" class="form-control" name="oid" id="oid" value="">
-            </div>
-            <div class="col-sm-4">
-              <input type="text" class="form-control" name="tdate" id="tdate" value="">
-            </div>
-          </div>
-          <div class="form-group">
-            <label class="col-sm-3 control-label" for="oid">Hosted Data ID</label>
-            <div class="col-sm-9">
-              <input type="text" class="form-control" name="hosteddataid" id="hosteddataid" value="">
-            </div>
-          </div>
-          <div class="form-group">
-            <label class="col-sm-3 control-label" for="checkoutoption">Checkout Option</label>
-            <div class="col-sm-9">
-              <select name="checkoutoption" id="checkoutoption" class="form-control">
-                <option value="classic" selected>classic</option>
-                <option value="combinedpage">combinedpage</option>
-              </select>
-            </div>
-          </div>
-          <div class="form-group">
-            <label class="col-sm-3 control-label" for="mobileMode">MobileMode</label>
-            <div class="col-sm-9">
-              <select name="mobileMode" id="mobileMode" class="form-control">
-                <option value="true">true</option>
-                <option value="false" selected>false</option>
-              </select>
-            </div>
-          </div>
-
-          <div class="form-group">
-            <label class="col-sm-3 control-label" for="authenticateTransaction">3D Secure</label>
-            <div class="col-sm-9">
-              <select name="authenticateTransaction" id="authenticateTransaction" class="form-control">
-                <option value="true">true</option>
-                <option value="false">false</option>
-              </select>
-            </div>
-          </div>
 
           <% if card %>
 
@@ -114,7 +46,7 @@
             <div class="col-sm-9">
               <div class="row">
 
-                <div class="col-xs-3">
+                <div class="col-xs-4">
                   <select class="form-control col-sm-2" name="expmonth" id="expmonth" value="12">
                         <option>Month</option>
                         <option value="01">Jan (01)</option>
@@ -132,7 +64,7 @@
                       </select>
                 </div>
 
-                <div class="col-xs-3">
+                <div class="col-xs-4">
                   <select class="form-control" name="expyear" id="expyear">
                         <option value="2016">2016</option>
                         <option value="2017">2017</option>
@@ -196,13 +128,82 @@
 <% end %>
 
           <div class="form-group">
-            <label class="col-sm-3 control-label" for="price">Total</label>
+            <label class="col-sm-3 control-label" for="price" data-toggle="tooltip" data-placement="top" title="Use the amount's cent value to walk through different payment scenarios.<br/>Read more on it in your Testing Pays account's 'Test' tab.">Total <i class="fa fa-info-circle"></i>
+</label>
             <div class="col-sm-3">
               <input id='amount' class="form-control" name="chargetotal" onchange="calculateHash(this);" data-chargetotal="authipayFormModal<%= post_fix %>" value="<%= params["amount"] || "250.00" %>" type="number" step="0.01"/>
-              <small style="color: red">Feel free to change the amount.</small>
+            </div>
+            <div class="col-sm-6">
+              <p class="small">
+              </p>
             </div>
           </div>
 
+
+          <!-- Other details, needed for config / debug -->
+          <div class="form-group">
+            <label class="col-sm-3 control-label" for="">&nbsp;</label>
+            <div class="col-sm-9">
+              <a data-toggle="collapse" href="#other-details" id="toggle-other-details"><i class="fa fa-plus"></i> Show Advanced Options</a>
+            </div>
+          </div>
+          <div id="other-details" class="collapse">
+            <div class="form-group">
+              <label class="col-sm-3 control-label" for="card-holder-name">Transaction Type</label>
+              <div class="col-sm-9">
+                <select name="txntype" id="txntype" class="form-control">
+                  <option value="sale">sale</option>
+                  <option value="preauth">preauth</option>
+                  <option value="postauth">postauth</option>
+                  <option value="void">void</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-3 control-label" for="oid">Order ID; TDate</label>
+              <div class="col-sm-5">
+                <input type="text" class="form-control" name="oid" id="oid" value="">
+              </div>
+              <div class="col-sm-4">
+                <input type="text" class="form-control" name="tdate" id="tdate" value="">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-3 control-label" for="oid">Hosted Data ID</label>
+              <div class="col-sm-9">
+                <input type="text" class="form-control" name="hosteddataid" id="hosteddataid" value="">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-3 control-label" for="checkoutoption">Checkout Option</label>
+              <div class="col-sm-9">
+                <select name="checkoutoption" id="checkoutoption" class="form-control">
+                  <option value="classic" selected>classic</option>
+                  <option value="combinedpage">combinedpage</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-3 control-label" for="mobileMode">MobileMode</label>
+              <div class="col-sm-9">
+                <select name="mobileMode" id="mobileMode" class="form-control">
+                  <option value="true">true</option>
+                  <option value="false" selected>false</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-3 control-label" for="authenticateTransaction">3D Secure</label>
+              <div class="col-sm-9">
+                <select name="authenticateTransaction" id="authenticateTransaction" class="form-control">
+                  <option value="true">true</option>
+                  <option value="false">false</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <!-- end other details -->
+          <br/>
           <div class="form-group">
             <div class="col-sm-offset-3 col-sm-9">
               <button type="submit" id="submit-btn" class="btn btn-success">Pay Now</button>
