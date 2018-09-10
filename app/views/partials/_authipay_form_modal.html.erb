@@ -9,8 +9,15 @@
       </div>
 
       <div class="modal-body">
-        <div id="message-container" class="hidden-container">
-          <div id="message-text" class="text-center payment-text">
+        <div id="message-container" class="row">
+          <div id="message-text" class="text-center col-md-12">
+            <p>
+              <% if card %>
+                This is an example payment form that you'd need to setup in order process an Authipay Connect transaction. This form collects the card details from your customers before redirecting them to Authipay's checkout flow. Besides these, you need to submit your date, time, mode information as well as authentication (i.e. storename) and callback URLs.
+              <% else %>
+                This is an example payment form that you'd need to setup in order process an Authipay Connect transaction. This form only collects the amount to be paid before redirecting them to Authipay's checkout flow. Besides these, you need to submit your date, time, mode information as well as authentication (i.e. storename) and callback URLs.
+              <% end %>
+            </p>
           </div>
         </div>
 
