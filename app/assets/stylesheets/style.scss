@@ -10,30 +10,13 @@ body {
   font-size: 16px;
 }
 
-.panel-body {
-  padding:0px;
-}
-
-.panel-section {
-  padding: 10px;
-}
-
-.panel-section-right {
-  padding-top: 10px;
-  padding-bottom: 10px;
-}
-
 .panel {
-  //min-height: 150px;
-//  max-width: 350px;
+  min-height: 220px;
+  max-width: 350px;
   margin-left: auto;
   margin-right: auto;
 }
-.panel-heading, .panel-heading-left {
-  border: 1px solid transparent;
-  border-top-left-radius: 4px;
-  border-bottom-left-radius: 4px;
-
+.panel-heading {
   padding: 1em;
   background-color: #3a3d3d !important;
   background-image: none !important;
@@ -42,9 +25,8 @@ body {
   font-size: 24px;
   color: white;
 }
-
-.btn-block {
-  max-width: 200px;
+.btn-lg {
+  max-width: 350px;
   margin-left: auto;
   margin-right: auto;
 }
