@@ -1,15 +1,11 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-12 text-center">
-      <h3>Authipay Connect API - Example integration by <a href="https://www.testingpays.com" target="_BLANK">Testing Pays</a></h3>
-      <hr width="80%">
-      <p>
-      <a href="https://github.com/TestingPays/authipay_rails">This Rails application</a> is an example on how you can implement an integration to Authipay Connect using Ruby on Rails.
-      Each mode behaves differently, depending on the mode type the Connect page will collect the details needed for the transaction to complete.
-      <br>
-      <br>
-      Try out the different modes, and with Testing Pays, you can configure the various look and feel for Authipay: the classic view, mobile or combined.
-      </p>
+      <h3>Authipay Connect API - Sample Integrations</h3>
+      <br/>
+      <p>Here are our Ruby on Rails examples showing the different integration modes for Authipay Connect (Authipay's hosted payment page solution).</p>
+
+      <p><a href="https://github.com/TestingPays/authipay_rails">Check out the Rails application code on Github.</a></p>
     </div>
   </div>
 </div>
@@ -21,56 +17,108 @@
   <div class="row">
 
     <div class="col-xs-12 col-md-4">
-      <div class="panel panel-default">
+      <div class="panel panel-default" style="position:relative; overflow:hidden;">
+        <span style="top: 1em;
+          left: -5em;
+          color: #fff;
+          display: block;
+          position:absolute;
+          text-align: center;
+          text-decoration: none;
+          letter-spacing: .06em;
+          background-color: #4F8A10;
+          padding: 0.5em 4.8em 0.4em 4.8em;
+          text-shadow: 0 0 0.75em #444;
+          box-shadow: 0 0 0.5em rgba(0,0,0,0.5);
+          font: bold 16px/1.2em Arial, Sans-Serif;
+          -webkit-text-shadow: 0 0 0.75em #444;
+          -webkit-box-shadow: 0 0 0.5em rgba(0,0,0,0.5);
+          -webkit-transform: rotate(-45deg) scale(0.75,1);
+          z-index:10;">SAMPLE</span>
         <div class="panel-heading">
           <h3 class="panel-title text-center">PayOnly Mode</h3>
         </div>
         <div class="panel-body text-center">
-          <p>Example redirect based transaction, using PayOnly mode.</>
+          <p>Example showing Connect redirect in "PayOnly" mode.</>
           <hr width="40%">
-          <p>Will collect payment details</p>
-          <br>
-          <button class="btn btn-lg btn-primary btn-block" data-toggle="modal" data-target="#authipayFormModalWithCard">With Card Details</button>
-          <button class="btn btn-lg btn-primary btn-block" data-toggle="modal" data-target="#authipayFormModal">Without Card Details</button>
+          <p>In PayOnly mode, your customers are asked for just payment details.</p>
         </div>
       </div>
-
-      <br>
+      <button class="btn btn-lg btn-primary btn-block" data-toggle="modal" data-target="#authipayFormModalWithCard">Collects Card Details</button>
+      <button class="btn btn-lg btn-primary btn-block" data-toggle="modal" data-target="#authipayFormModal">Collects Amount</button>
     </div>
 
     <div class="col-xs-12 col-md-4">
-      <div class="panel panel-default">
+      <div class="panel panel-default" style="position:relative; overflow:hidden;">
+        <span style="top: 1em;
+          left: -5em;
+          color: #fff;
+          display: block;
+          position:absolute;
+          text-align: center;
+          text-decoration: none;
+          letter-spacing: .06em;
+          background-color: #4F8A10;
+          padding: 0.5em 4.8em 0.4em 4.8em;
+          text-shadow: 0 0 0.75em #444;
+          box-shadow: 0 0 0.5em rgba(0,0,0,0.5);
+          font: bold 16px/1.2em Arial, Sans-Serif;
+          -webkit-text-shadow: 0 0 0.75em #444;
+          -webkit-box-shadow: 0 0 0.5em rgba(0,0,0,0.5);
+          -webkit-transform: rotate(-45deg) scale(0.75,1);
+          z-index:10;">SAMPLE</span>
         <div class="panel-heading">
           <h3 class="panel-title text-center">PayPlus Mode</h3>
         </div>
         <div class="panel-body text-center">
-          <p>Example redirect based transaction, using FullPay mode.</p>
+          <p>Example showing Connect redirect in "PayPlus" mode.</>
           <hr width="40%">
-          <p>Will collect payment, billing and shipping details</p>
-          <button class="btn btn-lg btn-primary btn-block" data-toggle="modal" data-target="#authipayFormModalPlusWithCard">With Card Details</button>
-          <button class="btn btn-lg btn-primary btn-block" data-toggle="modal" data-target="#authipayFormModalPlus">Without Card Details</button>
+          <p>In PayPlus mode, your customers are asked for payment and billing details.</p>
         </div>
       </div>
-      <br>
+      <button class="btn btn-lg btn-primary btn-block" data-toggle="modal" data-target="#authipayFormModalPlusWithCard">Collects Card Details</button>
+      <button class="btn btn-lg btn-primary btn-block" data-toggle="modal" data-target="#authipayFormModalPlus">Collects Amount</button>
     </div>
 
     <div class="col-xs-12 col-md-4">
-      <div class="panel panel-default">
+      <div class="panel panel-default" style="position:relative; overflow:hidden;">
+        <span style="top: 1em;
+          left: -5em;
+          color: #fff;
+          display: block;
+          position:absolute;
+          text-align: center;
+          text-decoration: none;
+          letter-spacing: .06em;
+          background-color: #4F8A10;
+          padding: 0.5em 4.8em 0.4em 4.8em;
+          text-shadow: 0 0 0.75em #444;
+          box-shadow: 0 0 0.5em rgba(0,0,0,0.5);
+          font: bold 16px/1.2em Arial, Sans-Serif;
+          -webkit-text-shadow: 0 0 0.75em #444;
+          -webkit-box-shadow: 0 0 0.5em rgba(0,0,0,0.5);
+          -webkit-transform: rotate(-45deg) scale(0.75,1);
+          z-index:10;">SAMPLE</span>
         <div class="panel-heading">
           <h3 class="panel-title text-center">FullPay Mode</h3>
         </div>
         <div class="panel-body text-center">
-          <p>Example redirect based transaction, using PayPlus mode.</p>
+          <p>Example showing Connect redirect in "FullPay" mode.</>
           <hr width="40%">
-          <p>Will collect payment and billing details</p>
-          <br>
-          <button class="btn btn-lg btn-primary btn-block" data-toggle="modal" data-target="#authipayFormModalFullWithCard">With Card Details</button>
-          <button class="btn btn-lg btn-primary btn-block" data-toggle="modal" data-target="#authipayFormModalFull">Without Card Details</button>
+          <p>In FullPay mode, your customers are asked for payment, billing and shipping details.</p>
         </div>
       </div>
-      <br>
+      <button class="btn btn-lg btn-primary btn-block" data-toggle="modal" data-target="#authipayFormModalFullWithCard">Collects Card Details</button>
+      <button class="btn btn-lg btn-primary btn-block" data-toggle="modal" data-target="#authipayFormModalFull">Collects Amount</button>
     </div>
 
+  </div>
+</div>
+<br/>
+<br/>
+<div class="row">
+  <div class="col-md-12 col-xs-12">
+    <div align="center" style="font-weight:300">Brought to you by <a href="https://www.testingpays.com">TestingPays.com</a></div>
   </div>
 </div>
 
