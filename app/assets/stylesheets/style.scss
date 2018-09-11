@@ -10,9 +10,29 @@ body {
   font-size: 16px;
 }
 
+.panel-ribbon {
+  top: 1em;
+  left: -5em;
+  color: #fff;
+  display: block;
+  position:absolute;
+  text-align: center;
+  text-decoration: none;
+  letter-spacing: .06em;
+  background-color: #4F8A10;
+  padding: 0.5em 4.8em 0.4em 4.8em;
+  text-shadow: 0 0 0.75em #444;
+  box-shadow: 0 0 0.5em rgba(0,0,0,0.5);
+  font: bold 16px/1.2em Arial, Sans-Serif;
+  -webkit-text-shadow: 0 0 0.75em #444;
+  -webkit-box-shadow: 0 0 0.5em rgba(0,0,0,0.5);
+  -webkit-transform: rotate(-45deg) scale(0.75,1);
+  z-index:10;
+}
+
 .panel {
   min-height: 220px;
-  max-width: 350px;
+  //max-width: 350px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -26,7 +46,7 @@ body {
   color: white;
 }
 .btn-lg {
-  max-width: 350px;
+  //max-width: 350px;
   margin-left: auto;
   margin-right: auto;
 }
