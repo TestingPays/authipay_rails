@@ -2,7 +2,7 @@
   <h1>Debug Return Page</h1>
   <p>Your online store will receive these parameters back from Authipay's Connect API at the end of the transaction flow:</p>
   <ul>
-  <% params.each do |k, v| %>
+  <% params.select {|k,v| k.to_s != "action"}.each do |k, v| %>
     <li><b><%= k %></b> = <%= v %></li>
   <% end %>
   </ul>
